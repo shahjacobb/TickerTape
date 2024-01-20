@@ -11,6 +11,7 @@
 - **Flask-Login** - authentication and session management
 - **Werkzeug** - password hashing 
 - **SQLite** - small but reliable datastore
+- **Alpha Advantage Web API** - 3rd party API for time series U.S. stock data
 ### Config
 - **python-dotenv** - for loading API key from `os.environ` variable
 
@@ -49,3 +50,6 @@ We'll need this to secretly store our session secret key and also the API key.
 - The `ALPHA_API_KEY` is for accessing stock data from [Alpha Vantage](https://www.alphavantage.co/).
 - For a more secure production environment, consider secret key managers like [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/) or [Vault by HashiCorp](https://www.vaultproject.io/) instead of python-dotenv for portability/scale.
 
+## To Do
+* Choose a better deployment solution. S3 won't work because the content isn't static and changes for everybody (not to mention the Time Series Data). Maybe Beanstalk or Heroku?
+* So far the app is a little too minimal. Need to add fundamental data (profit, balance sheet, mkt cap, cash flow, debt) to make it more informative and give the user a more unified sense of company performance and metrics..
